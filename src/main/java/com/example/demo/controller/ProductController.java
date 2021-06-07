@@ -7,14 +7,14 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.example.demo.entity.Product;
+import com.example.demo.dto.ProductDTO;
 
 @RequestMapping("/product")
 public interface ProductController {
 
 	@GetMapping("/findAll")
-	public List<Product> findAllProduct();
+	public List<ProductDTO> findAllProduct();
 
 	@PostMapping("/")
-	public Product save(@RequestBody Product product);
+	public ProductDTO save(@RequestBody ProductDTO product);
 }
