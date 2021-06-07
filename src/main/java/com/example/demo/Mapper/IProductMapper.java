@@ -9,9 +9,9 @@ import com.example.demo.dto.ProductDTO;
 import com.example.demo.entity.Product;
 
 @Mapper
-public interface ProductMapper {
+public interface IProductMapper {
 
-	ProductMapper INSTANCE = Mappers.getMapper(ProductMapper.class);
+	IProductMapper INSTANCE = Mappers.getMapper(IProductMapper.class);
 	
 	Product productDTOToProduct(ProductDTO productDTO);
 	

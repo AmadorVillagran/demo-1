@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.demo.Mapper.ProductMapper;
+import com.example.demo.Mapper.IProductMapper;
 import com.example.demo.dto.ProductDTO;
 import com.example.demo.entity.Product;
 import com.example.demo.repository.IProductRespository;
@@ -17,11 +17,11 @@ public class ProductService {
 	private IProductRespository productRepository;
 
 	public List<ProductDTO> findAll() {
-		return ProductMapper.INSTANCE.productListToProductDTOList(productRepository.findAll());
+		return IProductMapper.INSTANCE.productListToProductDTOList(productRepository.findAll());
 	}
 
-	public ProductDTO save(ProductDTO product) {
-		Product prd = ProductMapper.INSTANCE.productDTOToProduct(product);
-		return ProductMapper.INSTANCE.productToProductDTO(productRepository.save(prd));
+	public ProductDTO save(ProductDTO productDTO) {
+		Product product = IProductMapper.INSTANCE.productDTOToProduct(productDTO);
+		return IProductMapper.INSTANCE.productToProductDTO(productRepository.save(product));
 	}
 }

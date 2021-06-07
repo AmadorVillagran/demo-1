@@ -10,4 +10,5 @@ public class ProductDTO {
 	private Integer id;
 
 	private String name;
+
 }

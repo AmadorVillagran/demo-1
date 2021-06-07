@@ -10,11 +10,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.example.demo.dto.ProductDTO;
 
 @RequestMapping("/product")
-public interface ProductController {
+public interface IProductController {
 
 	@GetMapping("/findAll")
 	public List<ProductDTO> findAllProduct();
 
 	@PostMapping("/")
-	public ProductDTO save(@RequestBody ProductDTO product);
+	public ProductDTO save(@RequestBody ProductDTO productDTO);
 }

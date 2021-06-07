@@ -5,12 +5,12 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.controller.ProductController;
+import com.example.demo.controller.IProductController;
 import com.example.demo.dto.ProductDTO;
 import com.example.demo.service.ProductService;
 
 @RestController
-public class ProductControllerImpl implements ProductController {
+public class ProductControllerImpl implements IProductController {
 
 	@Autowired
 	private ProductService productService;
@@ -21,7 +21,7 @@ public class ProductControllerImpl implements ProductController {
 	}
 
 	@Override
-	public ProductDTO save(ProductDTO product) {
-		return productService.save(product);
+	public ProductDTO save(ProductDTO productDTO) {
+		return productService.save(productDTO);
 	}
 }
